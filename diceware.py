@@ -8,10 +8,10 @@ for line in wordlist:
     entry = line.strip().split("\t")
     dictionary[int(entry[0])] = entry[1]
 
-def getWord(key):
+def get_word(key):
     return dictionary[key]
 
-def getKey():
+def get_key():
     key = ""
     for i in range(5):
         key += str(random.randint(1,6))
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     parser.add_argument('-n', action="store", dest="words", type=int)
 
     args = parser.parse_args()
-    result = []
+    passphrase = []
     for i in range(args.words):
-        result.append(getWord(getKey()))
-    print(" ".join(result))
+        passphrase.append(get_word(get_key()))
+    print(" ".join(passphrase))
